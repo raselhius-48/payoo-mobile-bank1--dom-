@@ -59,3 +59,21 @@ document.getElementById('add-money-btn').addEventListener('click', function (e) 
 
 
 })
+
+// toggle feature 
+document.getElementById('add-button').addEventListener('click', function () {
+
+    document.getElementById('cash-Out-parent').style.display = 'none'
+    document.getElementById("Add-money-parent").style.display = 'block'
+
+
+})
+
+document.getElementById('cash-out-button').addEventListener('click', function () {
+
+    document.getElementById('cash-Out-parent').style.display = 'block'
+    document.getElementById("Add-money-parent").style.display = 'none'
+
+
+})
+
