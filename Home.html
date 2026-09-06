@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-[#f4f5f7] h-[100vh] ">
+<body class="bg-[#f4f5f7] h-[100vh] max-w-lg mx-auto">
 
     <div class=" max-w-lg mx-auto ">
         <div class="flex justify-between items-center border-b-1 border-gray-300 p-3">
@@ -30,7 +30,7 @@
                 <img src="./assets/Group.png" class="h-[50px]" alt="">
 
                 <div class="ml-3">
-                    <h2 class=" font-bold">$<span>45000</span></h2>
+                    <h2 class=" font-bold">$<span id="main-amount">45000</span></h2>
                     <p class="text-[#08080880]">Availble Balance</p>
                 </div>
             </div>
@@ -88,13 +88,13 @@
     </div>
 
     <!-- all from  -->
-    <div class="max-w-lg mx-auto">
+    <div class="max-w-lg mx-auto bg-[#FFFFFF] ">
         <h1 class="text-bold font-bold my-5">Add Money</h1>
-        <form class="bg-white rounded-2xl p-8">
+        <form class="bg-white rounded-2xl p-8 shadow-sm">
 
-            <div class="from-div ">
+            <div class="from-div  ">
                 <h1 class="font-semibold ">Select A Bank</h1>
-                <select class="select bg-[#f4f5f7] mt-3 rounded-2xl w-full">
+                <select id="bank" class="select bg-[#f4f5f7] mt-3 rounded-2xl w-full">
                     <option>select bank</option>
                     <option>prime Bank</option>
                     <option>ucb bank</option>
@@ -107,29 +107,31 @@
 
 
                 <label class="font-semibold text-bold" for="">Bank Account Number</label> <br>
-                <input type="text" placeholder="Enter 11 digit account number"
+                <input id="account-number" type="text" placeholder="Enter 11 digit account number"
                     class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full" />
             </div>
             <div class="from-div">
                 <!-- <h1>Amount to Add</h1> -->
                 <label class="font-semibold text-bold" for="">Amount to Add</label> <br>
-                <input type="text" placeholder="Add Amount to withdraw"
+                <input id="add-amount" type="text" placeholder="Add Amount to withdraw"
                     class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full " />
 
             </div>
             <div class="from-div">
                 <label class="font-semibold text-bold" for="">4 digit pin</label> <br>
-                <input type="text" placeholder="4 digit pin" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+                <input id="pin" type="text" placeholder="4 digit pin" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
                     id="pin-number" />
             </div>
-            <button type="button" class="btn bg-[#0874f2] mt-5 rounded-3xl max-w-lg mx-auto w-full text-white">Add
+            <button type="button" class="btn bg-[#0874f2] mt-5 rounded-3xl max-w-lg mx-auto w-full text-white"
+                id="add-money-btn">Add
                 Money</button>
+
+
+        </form>
+    </div>
     </div>
 
-    </form>
-    </div>
-
-
+    <script src="Home.js"></script>
 </body>
 
 </html>
