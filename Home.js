@@ -25,6 +25,7 @@
 //     // console.log(selrctBank, BankAccountNumber, AddAmount, MainAmount)
 
 // })
+// add money feature
 
 const validPin = 1234
 document.getElementById('add-money-btn').addEventListener('click', function (e) {
@@ -59,6 +60,39 @@ document.getElementById('add-money-btn').addEventListener('click', function (e) 
 
 
 })
+
+
+// cash out feature
+document.getElementById('cash-btn').addEventListener('click', function (e) {
+    e.preventDefault()
+    // console.log('cash out conected')
+
+    const AgentNumber = parseInt(document.getElementById('agent-number').value)
+
+    const Amount = parseInt(document.getElementById('amount').value)
+    const DigitPinNumber = parseInt(document.getElementById('digit-number').value)
+
+
+    if (AgentNumber < 11) {
+        alert('valid number')
+        return
+    }
+    if (DigitPinNumber !== validPin) {
+        alert('valid pin number')
+        return
+    }
+    // console.log(AgentNumber, Amount, DigitPinNumber)
+    const MainAmount = parseInt(document.getElementById('main-amount').innerText)
+    // console.log(Amount, MainAmount)
+
+    const totalAmount = MainAmount - Amount
+
+    document.getElementById('main-amount').innerText = totalAmount
+
+})
+
+
+
 
 // toggle feature 
 document.getElementById('add-button').addEventListener('click', function () {
