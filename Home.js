@@ -25,6 +25,21 @@
 //     // console.log(selrctBank, BankAccountNumber, AddAmount, MainAmount)
 
 // })
+
+
+
+// function to get input values
+function getInputValueNumber(id) {
+    const inputField = document.getElementById(id)
+    const inputFieldValue = inputField.value
+    const inputFieldValueNumber = parseInt(inputFieldValue)
+    return inputFieldValueNumber
+}
+
+
+
+
+
 // add money feature
 
 const validPin = 1234
@@ -36,8 +51,13 @@ document.getElementById('add-money-btn').addEventListener('click', function (e) 
     const BankAccountNumber = document.getElementById('account-number').value
 
 
-    const AddAmount = parseInt(document.getElementById('add-amount').value)
-    const pin = parseInt(document.getElementById('pin').value)
+    // const AddAmount = parseInt(document.getElementById('add-amount').value)
+
+    const AddAmount = getInputValueNumber('add-amount')
+
+    // const pin = parseInt(document.getElementById('pin').value)
+
+    const pin = getInputValueNumber('pin')
 
 
     if (BankAccountNumber.length < 11) {
