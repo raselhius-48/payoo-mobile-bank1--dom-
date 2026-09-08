@@ -28,12 +28,27 @@
 
 
 
-// function to get input values
+// function to get input values costing 
 function getInputValueNumber(id) {
     const inputField = document.getElementById(id)
     const inputFieldValue = inputField.value
     const inputFieldValueNumber = parseInt(inputFieldValue)
     return inputFieldValueNumber
+}
+
+function getInputValues(id) {
+    const inputField = document.getElementById(id)
+    const inputFieldValue = inputField.value
+    return inputFieldValue
+}
+
+// function to get innerText
+function getInnerText(id) {
+    const Element = document.getElementById(id)
+    const ElementValue = Element.innerText
+
+    const ElementValueNumber = parseInt(ElementValue)
+    return
 }
 
 
@@ -47,8 +62,14 @@ document.getElementById('add-money-btn').addEventListener('click', function (e) 
     e.preventDefault()
     // console.log('clicked button')
 
-    const selectBank = document.getElementById('bank').value
-    const BankAccountNumber = document.getElementById('account-number').value
+    // const selectBank = document.getElementById('bank').value
+
+
+    const selectBank = getInputValues('bank')
+
+    // const BankAccountNumber = document.getElementById('account-number').value
+
+    const BankAccountNumber = getInputValues('account-number')
 
 
     // const AddAmount = parseInt(document.getElementById('add-amount').value)
@@ -71,13 +92,14 @@ document.getElementById('add-money-btn').addEventListener('click', function (e) 
     }
     // console.log(selectBank, BankAccountNumber, AddAmount, pin)
 
-    const MainAmount = parseInt(document.getElementById('main-amount').innerText)
+    // const MainAmount = parseInt(document.getElementById('main-amount').innerText)
+
+    const MainAmount = getInnerText('main-amount')
 
 
     const totalAmount = AddAmount + MainAmount
 
     document.getElementById('main-amount').innerText = totalAmount
-
 
 })
 
@@ -87,10 +109,16 @@ document.getElementById('cash-btn').addEventListener('click', function (e) {
     e.preventDefault()
     // console.log('cash out conected')
 
-    const AgentNumber = parseInt(document.getElementById('agent-number').value)
+    // const AgentNumber = parseInt(document.getElementById('agent-number').value)
 
-    const Amount = parseInt(document.getElementById('amount').value)
-    const DigitPinNumber = parseInt(document.getElementById('digit-number').value)
+    const AgentNumber = getInputValueNumber('agent-number')
+
+    // const Amount = parseInt(document.getElementById('amount').value)
+    const Amount = getInputValueNumber('amount')
+
+
+    // const DigitPinNumber = parseInt(document.getElementById('digit-number').value)
+    const DigitPinNumber = getInputValueNumber('digit-number')
 
 
     if (AgentNumber < 11) {
@@ -102,7 +130,8 @@ document.getElementById('cash-btn').addEventListener('click', function (e) {
         return
     }
     // console.log(AgentNumber, Amount, DigitPinNumber)
-    const MainAmount = parseInt(document.getElementById('main-amount').innerText)
+    // const MainAmount = parseInt(document.getElementById('main-amount').innerText)
+    const MainAmount = getInnerText('main-amount')
     // console.log(Amount, MainAmount)
 
     const totalAmount = MainAmount - Amount
