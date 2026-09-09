@@ -60,40 +60,59 @@ function setInnerText(value) {
 // Toggle function 
 
 document.getElementById('add-button').addEventListener('click', function () {
-    const froms = document.getElementsByClassName('from')
-    for (const from of froms) {
+    // const froms = document.getElementsByClassName('from')
+    // for (const from of froms) {
 
-        from.style.display = 'none'
-    }
-    document.getElementById('Add-money-parent').style.display = 'block'
+    //     from.style.display = 'none'
+    // }
+    // document.getElementById('Add-money-parent').style.display = 'block'
+
+    handleToggle('Add-money-parent')
 })
 
 
 document.getElementById('cash-out-button').addEventListener('click', function () {
-    const froms = document.getElementsByClassName('from')
-    for (const from of froms) {
-        from.style.display = 'none'
-    }
-    document.getElementById('cash-Out-parent').style.display = 'block'
+    // const froms = document.getElementsByClassName('from')
+    // for (const from of froms) {
+    //     from.style.display = 'none'
+    // }
+    // document.getElementById('cash-Out-parent').style.display = 'block'
+
+    handleToggle('cash-Out-parent')
 })
 
 
 document.getElementById('transfer-button').addEventListener('click', function () {
-    const froms = document.getElementsByClassName('from')
-    for (const from of froms) {
-        from.style.display = 'none'
-    }
-    document.getElementById('transfer-money-parent').style.display = 'block'
+    // const froms = document.getElementsByClassName('from')
+    // for (const from of froms) {
+    //     from.style.display = 'none'
+    // }
+    // document.getElementById('transfer-money-parent').style.display = 'block'
+
+    handleToggle('transfer-money-parent')
 })
 
 document.getElementById('bonus-button').addEventListener('click', function () {
-    const froms = document.getElementsByClassName('from')
-    for (const from of froms) {
-        from.style.display = 'none'
-    }
-    document.getElementById('get-bonus-parent').style.display = 'block'
+    // const froms = document.getElementsByClassName('from')
+    // for (const from of froms) {
+    //     from.style.display = 'none'
+    // }
+    // document.getElementById('get-bonus-parent').style.display = 'block'
+    handleToggle('get-bonus-parent')
 })
 
+
+// function to toggle Short
+function handleToggle(id) {
+
+    const froms = document.getElementsByClassName('from')
+
+    for (const from of froms) {
+
+        from.style.display = 'none'
+    }
+    document.getElementById(id).style.display = 'block'
+}
 
 
 
